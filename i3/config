@@ -29,24 +29,27 @@ font pango:monospace 8
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-# exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 
 # compositor
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b
 
 # lock screen
-bindsym $mod+Shift+x exec --no-startup-id /home/vegi/.config/rofi/powermenu/powermenu.sh
+bindsym $mod+Shift+x exec --no-startup-id /home/vegi/Scripts/rofi/launch.sh powermenu
 
 # Screenshot
-set $ss spectacle -b -r -c
+set $ss maim -s | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+s exec $ss
 
 # Wallpaper
 # exec --no-startup-id /home/vegi/.config/polybar/material/scripts/pywal.sh /home/vegi/Pictures/8i685042jje51.jpg 
-exec --no-startup-id wal -i /home/vegi/Pictures/101550.png
+exec --no-startup-id feh --bg-fill ~/Pictures/fall.png
 
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh --hack
+
+# Polkit auth
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -59,7 +62,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec kitty 
 
 # kill focused window
 bindsym $mod+q kill
@@ -73,17 +76,17 @@ bindsym $mod+q kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Rofi Launcher
-set $menu --no-startup-id /home/vegi/.config/rofi/launchers/colorful/launcher.sh
+set $menu --no-startup-id /home/vegi/Scripts/rofi/launch.sh appmenu
 bindsym $mod+d exec $menu
 
 # Rofi Menu
-set $qmenu --no-startup-id /home/vegi/.config/rofi/applets/menu/apps.sh
-bindsym $mod+x exec $qmenu
+set $qmenu --no-startup-id /home/vegi/Scripts/rofi/tabmenu.sh
+bindsym $mod+Tab exec $qmenu
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+i focus up
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
@@ -93,10 +96,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -105,7 +108,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -244,7 +247,7 @@ no_focus [class="plasmashell" window_type="notification"]
 for_window [title="Desktop — Plasma"] kill; floating enable; border none
 
 # Disable title bars
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 2 
 
 # Gaps
 gaps inner 20
@@ -282,7 +285,7 @@ workspace $ws10 output $sec
 workspace_auto_back_and_forth yes
 
 #assign default workspaces
-assign [class="Thunderbird"] 3
+assign [class="Thunderbird"] 8 
 assign [title="(?i)whatsapp$"] 3
 assign [class="discord"] 4
 assign [class="TelegramDesktop"] 4
@@ -292,3 +295,6 @@ assign [title="(?i)^spotify"] 6
 for_window [title="(?i)whatsapp"] floating disable; border none
 for_window [title="(?i)^spotify"] floating disable; border none
 for_window [class="xdman-Main"] floating enable; border none
+
+# class         border  bg      text    indi    child_border
+client.focused  #e5c2466 #285577 #ffffff #2e9ef4   #e5c2466
