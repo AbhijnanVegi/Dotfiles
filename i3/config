@@ -35,7 +35,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b
 
 # lock screen
-bindsym $mod+Shift+x exec --no-startup-id /home/vegi/Scripts/rofi/launch.sh powermenu
+bindsym $mod+Shift+x exec --no-startup-id ~/Scripts/rofi/launch.sh powermenu
 
 # Screenshot
 set $ss maim -s | xclip -selection clipboard -t image/png
@@ -46,7 +46,7 @@ bindsym $mod+Shift+s exec $ss
 exec --no-startup-id feh --bg-fill ~/Pictures/fall.png
 
 # Polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh --hack
+exec_always --no-startup-id ~/.config/polybar/launch.sh 
 
 # Polkit auth
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
