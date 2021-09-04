@@ -76,11 +76,11 @@ bindsym $mod+q kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Rofi Launcher
-set $menu --no-startup-id /home/vegi/Scripts/rofi/launch.sh appmenu
+set $menu --no-startup-id ~/Scripts/rofi/launch.sh appmenu
 bindsym $mod+d exec $menu
 
 # Rofi Menu
-set $qmenu --no-startup-id /home/vegi/Scripts/rofi/tabmenu.sh
+set $qmenu --no-startup-id ~/Scripts/rofi/tabmenu.sh
 bindsym $mod+Tab exec $qmenu
 
 # change focus
