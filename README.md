@@ -5,13 +5,13 @@
 - i3-gaps
 
 - maim
-- xclip
+- xclip (This and maim can be replaced with spectacle or any other ss application if installed)
 - polybar
 - rofi
-- Hack Nerd Fonts
+- Hack Nerd Fonts (nerd-fonts-hack)
 - picom-ibhagwan-git
 - Betterlockscreen
-- nm-applet
+- nm-applet (network-manager-applet)
 - kitty
 - feh
 - zathura (pdf-viewer)
