@@ -121,3 +121,8 @@ element-text {
 #inputbar {
     children: [prompt,textbox-prompt-colon,entry,case-indicator];
 }
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}

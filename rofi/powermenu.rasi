@@ -79,3 +79,8 @@ element-text {
     background-color: @selected-background;
     text-color:       @selected-foreground;
 }
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
