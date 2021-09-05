@@ -5,13 +5,13 @@
 - i3-gaps
 
 - maim
-- xclip
+- xclip (This and maim can be replaced with spectacle or any other ss application if installed)
 - polybar
 - rofi
-- Hack Nerd Fonts
+- Hack Nerd Fonts (nerd-fonts-hack)
 - picom-ibhagwan-git
 - Betterlockscreen
-- nm-applet
+- nm-applet (network-manager-applet)
 - kitty
 - feh
 - zathura (pdf-viewer)
@@ -26,3 +26,8 @@
 3. Install all dependencies
 4. Edit /etc/environments and set `QT_QPA_PLATFORMTHEME=qt5ct` and comment out `QT_STYLE_OVERRIDE=kvantum` if exists
 5. Set qt5ct theme to kvantum and set theme in kvantum
+
+## Screenshots
+![image](https://user-images.githubusercontent.com/68379071/132095894-3284f335-6507-40d7-ae68-16d1dba94239.png)
+![image](https://user-images.githubusercontent.com/68379071/132096066-837e3f6e-6826-4ec9-b5ee-6e24a170ff59.png)
+
