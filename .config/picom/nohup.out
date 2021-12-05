@@ -1,0 +1,20 @@
+[ 15/11/21 15:17:02.685 parse_blur_method WARN ] Blur method 'kawase' has been renamed to 'dual_kawase'. Interpreted as 'dual_kawase', but this will stop working soon.
+[ 15/11/21 15:17:02.685 parse_kawase_blur_strength INFO ] blur-strength: 7 [.iter = 3, .offset = 4.250000, .expand = 50]
+[ 15/11/21 15:17:03.107 glx_has_extension INFO ] Found GLX extension GLX_SGI_video_sync.
+[ 15/11/21 15:17:03.107 glx_has_extension INFO ] Found GLX extension GLX_SGI_swap_control.
+[ 15/11/21 15:17:03.107 glx_has_extension INFO ] Missing GLX extension GLX_OML_sync_control.
+[ 15/11/21 15:17:03.107 glx_has_extension INFO ] Missing GLX extension GLX_MESA_swap_control.
+[ 15/11/21 15:17:03.107 glx_has_extension INFO ] Found GLX extension GLX_EXT_swap_control.
+[ 15/11/21 15:17:03.107 glx_has_extension INFO ] Found GLX extension GLX_EXT_texture_from_pixmap.
+[ 15/11/21 15:17:03.107 glx_has_extension INFO ] Found GLX extension GLX_ARB_create_context.
+[ 15/11/21 15:17:03.107 glx_has_extension INFO ] Found GLX extension GLX_EXT_buffer_age.
+[ 15/11/21 15:17:03.107 glx_has_extension INFO ] Missing GLX extension GLX_MESA_query_renderer.
+[ 15/11/21 15:17:03.261 gl_has_extension INFO ] Missing GL extension GL_GREMEDY_string_marker.
+[ 15/11/21 15:17:03.261 gl_init INFO ] GL vendor is NVIDIA, don't use glFinish
+[ 15/11/21 15:19:05.480 reset_enable INFO ] picom is resetting...
+[ 15/11/21 15:19:05.481 reset_enable INFO ] picom is resetting...
+[ 15/11/21 15:19:05.481 reset_enable INFO ] picom is resetting...
+[ 15/11/21 15:19:05.507 parse_blur_method WARN ] Blur method 'kawase' has been renamed to 'dual_kawase'. Interpreted as 'dual_kawase', but this will stop working soon.
+[ 15/11/21 15:19:05.507 parse_kawase_blur_strength INFO ] blur-strength: 7 [.iter = 3, .offset = 4.250000, .expand = 50]
+[ 15/11/21 15:19:05.572 gl_has_extension INFO ] Missing GL extension GL_GREMEDY_string_marker.
+[ 15/11/21 15:19:05.572 gl_init INFO ] GL vendor is NVIDIA, don't use glFinish

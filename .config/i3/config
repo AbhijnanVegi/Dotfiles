@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:Roboto 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 #
@@ -38,15 +38,20 @@ exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b
 bindsym $mod+Shift+x exec --no-startup-id ~/Scripts/rofi/launch.sh powermenu
 
 # Screenshot
-set $ss maim -s | xclip -selection clipboard -t image/png
+# set $ss maim -s | xclip -selection clipboard -t image/png
+set $ss flameshot gui
 bindsym $mod+Shift+s exec $ss
+# Set display arrangment
+exec xrandr --output eDP-1-1 --left-of HDMI0
 
 # Wallpaper
 # exec --no-startup-id /home/vegi/.config/polybar/material/scripts/pywal.sh /home/vegi/Pictures/8i685042jje51.jpg 
-exec --no-startup-id feh --bg-fill ~/Pictures/fall.png
+# exec --no-startup-id feh --bg-fill ~/Pictures/serene.jpg
+exec ~/.fehbg &
+# exec feh --bg-fill Pictures/jjz58zo2wyt71.png
 
 # Polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh 
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Polkit auth
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -62,7 +67,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty 
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
@@ -76,11 +81,11 @@ bindsym $mod+q kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Rofi Launcher
-set $menu --no-startup-id ~/Scripts/rofi/launch.sh appmenu
+set $menu --no-startup-id /home/vegi/Scripts/rofi/launch.sh appmenu
 bindsym $mod+d exec $menu
 
 # Rofi Menu
-set $qmenu --no-startup-id ~/Scripts/rofi/tabmenu.sh
+set $qmenu --no-startup-id /home/vegi/Scripts/rofi/tabmenu.sh
 bindsym $mod+Tab exec $qmenu
 
 # change focus
@@ -97,9 +102,9 @@ bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+j move down
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -198,8 +203,6 @@ mode "resize" {
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
@@ -207,17 +210,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-mode "launcher" {
-	bindsym v exec ~/Applications/VSCode-linux-x64/code && i3 mode "default"
-	bindsym b exec /usr/bin/microsoft-edge-dev %U && i3 mode "default"
-	bindsym f exec fff && i3 mode "default"
-	bindsym s exec /opt/microsoft/msedge-dev/microsoft-edge-dev --profile-directory=Default --app-id=pjibgclleladliembfgfagdaldikeohf "--app-url=https://open.spotify.com/?utm_source=pwa_install" && i3 mode "default"
-	bindsym t exec env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/teams_teams.desktop /var/lib/snapd/snap/bin/teams %U && i3 mode "default"
 
-	bindsym Escape mode "default"	
-}
-
-bindsym Mod1+l mode "launcher"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 # bar {
@@ -250,8 +243,9 @@ for_window [title="Desktop — Plasma"] kill; floating enable; border none
 for_window [class=".*"] border pixel 2 
 
 # Gaps
-gaps inner 20
+gaps inner 8
 gaps outer 5
+smart_gaps on
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -285,11 +279,12 @@ workspace $ws10 output $sec
 workspace_auto_back_and_forth yes
 
 #assign default workspaces
-assign [class="Thunderbird"] 8 
 assign [title="(?i)whatsapp$"] 3
 assign [class="discord"] 4
 assign [class="TelegramDesktop"] 4
-assign [title="(?i)^spotify"] 6
+assign [class="(?i)Spotify"] 6
+assign [class="superProductivity"] 8
+assign [class="Thunderbird"] 8 
 
 # remove floating for Brave Apps
 for_window [title="(?i)whatsapp"] floating disable; border none
@@ -297,4 +292,7 @@ for_window [title="(?i)^spotify"] floating disable; border none
 for_window [class="xdman-Main"] floating enable; border none
 
 # class         border  bg      text    indi    child_border
-client.focused  #e5c2466 #285577 #ffffff #2e9ef4   #e5c2466
+client.focused  #40347e #1f2239 #ffffff #2e9ef4   #40347e
+
+# Autostart applications
+exec ~/Scripts/autostart.sh
