@@ -1,0 +1,9 @@
+$ ghc --make xmonad.hs -i -ilib -fforce-recomp -main-is main -dynamic -v0 -outputdir /home/vegi/.xmonad/build-x86_64-linux -o /home/vegi/.xmonad/xmonad-x86_64-linux
+
+xmonad.hs:495:41: warning: [-Woperator-whitespace-ext-conflict]
+    The prefix use of a ‘$’ would denote an untyped splice
+      were the TemplateHaskell extension enabled.
+    Suggested fix: add whitespace after the ‘$’.
+    |
+495 |         wscs = [((m ++ show i), windows $f s) | (s,i) <- zip myWorkspaces [1..]
+    |                                         ^
