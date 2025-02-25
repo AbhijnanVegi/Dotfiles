@@ -126,7 +126,6 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 alias drag=dragon-drop
-alias startvnc="ssh -L 5901:127.0.0.1:5901 -C -N -l vegi abhijnan.live"
 alias ls="lsd"
 alias lock="betterlockscreen -l"
 alias pro="protonvpn-cli"
